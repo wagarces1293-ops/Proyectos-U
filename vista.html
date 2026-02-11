@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué cenamos hoy?</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 { color: #ff6b6b; }
+        #idea-display {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #333;
+            min-height: 3.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #ee5253;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🍽️ ¿Qué cenamos?</h1>
+        <p>Pulsa el botón si no tienes ni idea.</p>
+        <div id="idea-display">Haz clic para empezar</div>
+        <button onclick="generarCena()">Dame una idea</button>
+    </div>
+
+    <script>
+        const cenas = [
+            "🍕 Pizza casera (o delivery, no juzgamos)",
+            "🌮 Tacos con lo que haya en la nevera",
+            "🥗 Ensalada César bien cargada",
+            "🍝 Pasta con ajo, aceite y mucho queso",
+            "🥪 Sandwich Gourmet (el 'bikini' de toda la vida)",
+            "🍳 Tortilla de patatas (el clásico)",
+            "🍣 Sushi (date un capricho)",
+            "🍔 Hamburguesa con extra de todo",
+            "🥣 Un tazón de cereales (si el cansancio gana)",
+            "🌯 Burrito de pollo y aguacate"
+        ];
+
+        function generarCena() {
+            const display = document.getElementById('idea-display');
+            const randomIndex = Math.floor(Math.random() * cenas.length);
+            
+            // Efecto de carga rápido
+            display.innerText = "Pensando...";
+            
+            setTimeout(() => {
+                display.innerText = cenas[randomIndex];
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
