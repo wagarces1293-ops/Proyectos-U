@@ -1,4 +1,3 @@
 Wilmar Andres Garces Rueda
-celular: 3006856902
 edad: 24
 Tarea: Pal repositorio.
