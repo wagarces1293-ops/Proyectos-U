@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Burger Palace - Ciclo Real</title>
+    <link rel="stylesheet" href="ejercicio2BurguerPalaceStile.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍔 BURGUER PALACE</h1>
+        <div id="pantalla">
+            <p>Presiona el botón para iniciar el ciclo de pedidos.</p>
+            <button id="btnIniciar" onclick="ejecutarPedido()">Iniciar Pedido</button>
+        </div>
+
+        <div id="zonaInput" class="hidden">
+            <h3 id="mensajePrompt">Ingrese su pedido:</h3>
+            <input type="number" id="valorInput" autofocus>
+            <button id="btnEnviar">Enviar Dato</button>
+        </div>
+
+        <div id="consolaSimulada"></div>
+    </div>
+    <script src="ejercicio2BurguerPalace.js"></script>
+</body>
+</html>

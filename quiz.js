@@ -10,7 +10,9 @@ let respuesta1 = 23
 let respuesta2 = "10 diciembre"
 let respuesta3 = "sonic"
 
-function refrescarUI(texto) {
+function refrescarUI(texto) {// hecho por IA
+    /* innerText Actualiza el anuncio que avisa si, si o no 
+    Contesto bien, */
     display.innerText = texto;
     puntosHTML.innerText = puntuacion;
 }
@@ -19,6 +21,8 @@ lo que el usuario escribe */
 let tRespuesta1 = prompt(`¿Cuanto es 9 * 2 + 5?`)
 if (tRespuesta1 == respuesta1) {
     puntuacion ++
+    /* Usa la funcion UI para anuncia si contesto bien o
+    mal y el tiempo de espera */
     refrescarUI("¡Correcto! Siguiente en 5s...");
 }
 else {
@@ -61,5 +65,5 @@ else {
      refrescarUI(`¡¡Eres una deshonra, no acertaste ni una!! (* ￣︿￣)`)
 }
 },1000)
-}, 5000)
-}, 5000)
+}, 3000)
+}, 3000)
