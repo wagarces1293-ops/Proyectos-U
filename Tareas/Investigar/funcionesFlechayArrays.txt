@@ -1,0 +1,59 @@
+1. Que son la funciónes Flechas?: 
+Es la forma mas rapida corta de escribir funciones en js, se llaman
+asi debido al uso del simbolo =>.
+
+Antes:
+function saludar(nombre){
+    return `Hola ${nombre}`
+}
+Función Flecha:
+const saludar = (nombre) => "Hola " + nombre;
+
+Reglas: 
+1. Si solo se tiene una linea de código, no se necesitan las {} ni 
+la palabra return.
+2. Si solo se tiene un parametro se puede quitar: nombre =>.
+Dato Importante: A diferencia de las funciones normales, las 
+funciones flechas no tienen su propio this.
+
+-----------------------------------------------
+
+2. Que son los arrays (arreglos)?:
+Un array es como una lista de supermercado, es una variable que puede
+guardar muchos datos a la vez.
+Estructura: Los Arrays usan [] y los elementos van separados por comas.
+Ejemplo:
+let frutas = [`Manzana`,`Pera`,`Plátanos`]
+Conceptos Clave:
+1. Indice: Es la posicion de cada elemento. En la programación 
+siempre se empieza a contar desde 0.
+
+→ frutas [0] // Es manzana.
+→ frutas [2] // Es Plátanos.
+
+2. Longitud (length) // Te dice cuantos elementos hay.
+frutas.leight // nos daria 3.
+
+---------------------------------------------
+
+3. Combinar ambos: Combinar Función flecha con arrays.
+
+Ejemplo:
+Imagina que tienes una lista de precios y quieres saber cuáles son caros (mayores a 50).
+
+const precios = [10, 85, 40, 120, 25];
+
+// Usamos .filter() con una función flecha
+const caros = precios.filter(precio => precio > 50);
+
+console.log(caros); // Resultado: [85, 120]
+// filtra los precios que son mayorer que 50.
+
+Métodos más usados:
+.push(dato): Agrega un elemento al final.
+
+.pop(): Quita el último elemento.
+
+.forEach(): Recorre cada elemento (como un ciclo for pero más elegante).
+
+.map(): Transforma cada elemento de la lista y crea una nueva.
