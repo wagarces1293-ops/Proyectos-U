@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Batalla RPG - JS Flecha</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #2c3e50; color: white; }
+        .escenario { display: flex; justify-content: space-around; padding: 20px; }
+        .personaje { border: 2px solid white; padding: 20px; border-radius: 10px; width: 40%; }
+        .barra-vida { background: #7f8c8d; height: 20px; width: 100%; border-radius: 5px; margin-top: 10px; }
+        .vida-actual { background: #27ae60; height: 100%; transition: width 0.3s; }
+        .controles { margin-top: 30px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 5px; }
+        #log { margin-top: 20px; color: #f1c40f; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <h1>⚔️ Batalla en el Calabozo ⚔️</h1>
+
+    <div class="escenario">
+        <div class="personaje">
+            <h2>Héroe</h2>
+            <p>Vida: <span id="vida-jugador">100</span> HP</p>
+            <div class="barra-vida"><div id="barra-j" class="vida-actual" style="width: 100%;"></div></div>
+            <p>Inventario: [<span id="inventario">Poción, Poción</span>]</p>
+        </div>
+
+        <div class="personaje">
+            <h2>Monstruo</h2>
+            <p>Vida: <span id="vida-monstruo">100</span> HP</p>
+            <div class="barra-vida"><div id="barra-m" class="vida-actual" style="width: 100%;"></div></div>
+        </div>
+    </div>
+
+    <div class="controles">
+        <button id="btn-ataque">Atacar ⚔️</button>
+        <button id="btn-curar">Usar Poción 🧪</button>
+    </div>
+
+    <p id="log">¡Un monstruo bloquea tu camino!</p>
+
+    <script>
+        // --- VARIABLES Y ARRAYS ---
+        let vidaJ = 100;
+        let vidaM = 100;
+        let inventario = ["Poción", "Poción"];
+
+        // --- FUNCIONES FLECHA PARA ACTUALIZAR LA PANTALLA ---
+        const actualizarUI = () => {
+            document.getElementById("vida-jugador").innerText = vidaJ;
+            document.getElementById("vida-monstruo").innerText = vidaM;
+            document.getElementById("inventario").innerText = inventario.join(", ");
+            
+            // Actualizar barras de vida visualmente
+            document.getElementById("barra-j").style.width = vidaJ + "%";
+            document.getElementById("barra-m").style.width = vidaM + "%";
+
+            if (vidaM <= 0) terminarJuego("¡VICTORIA! El monstruo ha caído.");
+            if (vidaJ <= 0) terminarJuego("HAS MUERTO. El calabozo gana.");
+        };
+
+        const escribirLog = (mensaje) => {
+            document.getElementById("log").innerText = mensaje;
+        };
+
+        // --- LÓGICA DE COMBATE ---
+        const ataqueJugador = () => {
+            if (vidaJ <= 0 || vidaM <= 0) return;
+
+            let danio = 15;
+            vidaM -= danio;
+            escribirLog(`¡Golpeaste al monstruo por ${danio} HP!`);
+            
+            if (vidaM > 0) turnoMonstruo();
+            actualizarUI();
+        };
+
+        const usarPocion = () => {
+            if (inventario.length > 0 && vidaJ > 0) {
+                vidaJ += 25;
+                if (vidaJ > 100) vidaJ = 100; // No pasar del máximo
+                inventario.pop(); // Quita la última poción del array
+                escribirLog("Te has curado 25 HP.");
+                turnoMonstruo();
+                actualizarUI();
+            } else {
+                escribirLog("No te quedan pociones o estás muerto.");
+            }
+        };
+
+        const turnoMonstruo = () => {
+            let danioM = 12;
+            vidaJ -= danioM;
+            setTimeout(() => {
+                escribirLog(`El monstruo contraataca y te quita ${danioM} HP.`);
+                actualizarUI();
+            }, 500); // Pequeña pausa para que se sienta el turno
+        };
+
+        const terminarJuego = (msj) => {
+            escribirLog(msj);
+            document.getElementById("btn-ataque").disabled = true;
+            document.getElementById("btn-curar").disabled = true;
+        };
+
+        // --- EVENTOS (Lo que conecta los botones con las funciones) ---
+        document.getElementById("btn-ataque").onclick = ataqueJugador;
+        document.getElementById("btn-curar").onclick = usarPocion;
+
+    </script>
+</body>
+</html>
