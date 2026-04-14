@@ -1,6 +1,15 @@
-/* "Burger Palace" - Adaptación a TypeScript */
+/* "Burger Palace" es un restaurante de comidas rápidas que ofrece 
+únicamente 3 combos: 
+Combo 1 — "Clásica" (hamburguesa sencilla + papas + gaseosa): $15.000 
+Combo 2 — "Doble Poder" (hamburguesa doble + papas grandes + gaseosa): 
+$22.000 
+Combo 3 — "Mega Fest" (hamburguesa triple + papas + malteada + 
+postre): $35.000 
+El sistema permite tomar pedidos de forma continua 
+hasta que el usuario decida finalizar. Debe calcular el total acumulado de la cuenta a medida que se 
+agregan combos. */
 
-let opcion: string | null;
+let opcion: string | null = "";
 let cantidadCombo: number = 0;
 let precioCombo: number = 0;
 let subTotal: number = 0;
@@ -17,31 +26,24 @@ console.log(`====== BURGUER PALACE ======
     4. Finalizar pedido.`);
 
 do {
-    opcion = prompt(`Ingrese su pedido: `);
+    opcion = prompt(`Ingrese su pedido (1-4): `);
 
     if (opcion === "1") {
         precioCombo = 15000;
-        let ingreso: number = Number(prompt(`Ingrese Cantidad Combo 1:`));
-        cantidadCombo = ingreso; // Siguiendo tu lógica de asignación
+        cantidadCombo = Number(prompt(`Ingrese Cantidad Combo 1:`));
         contadorCombo1 += cantidadCombo;
-    }
-    else if (opcion === "2") {
+    } else if (opcion === "2") {
         precioCombo = 22000;
-        let ingreso: number = Number(prompt(`Ingrese Cantidad Combo 2:`));
-        cantidadCombo = ingreso;
+        cantidadCombo = Number(prompt(`Ingrese Cantidad Combo 2:`));
         contadorCombo2 += cantidadCombo;
-    }
-    else if (opcion === "3") {
+    } else if (opcion === "3") {
         precioCombo = 35000;
-        let ingreso: number = Number(prompt(`Ingrese Cantidad Combo 3:`));
-        cantidadCombo = ingreso;
+        cantidadCombo = Number(prompt(`Ingrese Cantidad Combo 3:`));
         contadorCombo3 += cantidadCombo;
-    }
-    else if (opcion === "4") {
+    } else if (opcion === "4") {
         break;
-    }
-    else {
-        console.log(`Opcion no valida.`);
+    } else {
+        console.log(`Opción no válida.`);
         continue;
     }
 
@@ -49,16 +51,16 @@ do {
     totalCombos += cantidadCombo;
     totalCuenta += subTotal;
 
-    console.log(`Combo: ${opcion}`);
+    console.log(`Combo seleccionado: ${opcion}`);
     console.log(`Cantidad: ${cantidadCombo}`);
     console.log(`Subtotal: ${subTotal}`);
     console.log(`Total Acumulado: ${totalCuenta}`);
 
 } while (opcion !== "4");
 
-console.clear();
+console.log(`\n=== RESUMEN DE VENTAS ===`);
 console.log(`Combos Clasica: ${contadorCombo1}`);
 console.log(`Combos Doble Poder: ${contadorCombo2}`);
 console.log(`Combos Mega Fest: ${contadorCombo3}`);
-console.log(`Total combos: ${totalCombos}`);
+console.log(`Total combos vendidos: ${totalCombos}`);
 console.log(`Total a pagar: ${totalCuenta}`);
