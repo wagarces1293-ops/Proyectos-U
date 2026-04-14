@@ -5,12 +5,13 @@ si el tiempo de permanencia supera las 8 horas, se aplica una tarifa
 plana del día completo con un descuento del 20% sobre el valor 
 calculado. El sistema registra vehículos durante una jornada y genera 
 un reporte al cierre.*/
+export {}; // Esto convierte el archivo en un módulo aislado
 
 let opcionMenu: number = 0;
 let tipovehiculo: string = "";
 let horasPermanencia: number = 0;
 let tarifaHora: number = 0;
-let costoTotal: number = 0;
+let costoTotal: number | string = 0;
 let descuento: number = 0;
 let totalPagar: number = 0;
 let contMotos: number = 0;

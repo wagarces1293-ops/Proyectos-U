@@ -6,6 +6,7 @@ como ayuda mensual. Adultos mayores de 80 años: reciben el 15% del
 salario mínimo como ayuda mensual. Personas menores de 60 años: no 
 aplican al programa. El sistema debe registrar un grupo de personas y 
 generar estadísticas completas al final. */
+export {}; // Esto convierte el archivo en un módulo aislado
 
 let cantidadPersonas: number = 0;
 let nombre: string = "";

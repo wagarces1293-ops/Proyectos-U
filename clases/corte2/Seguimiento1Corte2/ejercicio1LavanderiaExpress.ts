@@ -4,6 +4,7 @@ Sin embargo, como estrategia comercial, si un cliente alquila una
 lavadora por más de 12 horas, recibe un descuento del 30% 
 sobre el total de la cuenta. El sistema debe permitir registrar varios 
 clientes y al final mostrar un resumen completo del día.*/
+export {}; // Esto convierte el archivo en un módulo aislado
 
 let nombreCliente: string = "";
 let horasAlquiler: number = 0;

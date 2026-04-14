@@ -8,6 +8,7 @@ postre): $35.000
 El sistema permite tomar pedidos de forma continua 
 hasta que el usuario decida finalizar. Debe calcular el total acumulado de la cuenta a medida que se 
 agregan combos. */
+export {}; // Esto convierte el archivo en un módulo aislado
 
 let opcion: string | null = "";
 let cantidadCombo: number = 0;
