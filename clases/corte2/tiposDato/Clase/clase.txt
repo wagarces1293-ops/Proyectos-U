@@ -1,0 +1,196 @@
+1. Poo
+2. Poo Basico javascript
+3. Ejemplo.
+4. Que es Clase.
+5. Que es instancia
+6. Get - Set
+7. Que es Static: 
+8. Herencia: 
+Estudiar Asincronismo (videos)
+Que es una promesa (videos)
+Estudiar Asyn -Away
+Traes un juego usando asincronismo
+Que es una exepcion
+Try - Catch - Finally
+
+
+¿Que es una clase? : Una clase es un molde o plantilla que nos permite crear objetos con propiedades y métodos similares. 
+Las clases son una forma de organizar y estructurar el código en programación orientada a objetos. 
+
+Clase en javascript: Es una función especial que se utiliza para crear objetos con propiedades y métodos similares.
+como creo una clase en javascript: Se utiliza la palabra reservada "class" seguida del nombre de la clase y un bloque de código que contiene las 
+propiedades y métodos de la clase.
+
+Ejemplo de clase en javascript:
+
+class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+}
+    
+En este ejemplo, hemos definido una clase llamada "Persona" con un constructor que recibe dos parámetros: "nombre" y "edad". 
+El constructor se utiliza para inicializar las propiedades de la clase. 
+Luego, podemos crear objetos de la clase "Persona" utilizando el operador "new":
+const persona1 = new Persona("Juan", 30);
+const persona2 = new Persona("Maria", 25);
+
+En este ejemplo, hemos creado dos objetos de la clase "Persona" llamados "persona1" y "persona2".
+
+¿Que es Poo?: La programación orientada a objetos (POO) es un paradigma de programación que se basa en el concepto de objetos, que son instancias de 
+clases. La POO se utiliza para organizar y estructurar el código de manera más eficiente y modular, permitiendo la reutilización de código y la 
+creación de programas más complejos.
+
+¿Que lenguajes soportan Poo?: Muchos lenguajes de programación soportan la programación orientada a objetos, incluyendo Java, C++, Python, Ruby, 
+JavaScript, entre otros.
+
+Que lenguaje es mejor para Poo?: No hay un lenguaje de programación que sea mejor para la programación orientada a objetos, 
+ya que cada lenguaje tiene sus propias características y ventajas.
+
+Cual es la diferencia entre clase e instancia?: Una clase es un molde o plantilla que define las propiedades y métodos de un objeto, 
+mientras que una instancia es un objeto creado a partir de una clase.
+
+¿Como uso Poo en javascript?: En javascript, la programación orientada a objetos se puede implementar utilizando clases y objetos. Las clases se utilizan
+para definir la estructura y el comportamiento de los objetos, mientras que los objetos son instancias de las clases. 
+Los objetos pueden tener propiedades (variables) y métodos (funciones) que definen su estado y comportamiento.
+ejemplo de uso de POO en javascript:
+
+que son instancias: Las instancias son objetos creados a partir de una clase. Cada instancia tiene sus propias propiedades y métodos, 
+pero comparten la misma estructura y comportamiento definidos por la clase.
+
+ejemplo de instancias en javascript:
+
+class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+}
+const persona1 = new Persona("Juan", 30);
+const persona2 = new Persona("Maria", 25);
+En este ejemplo, "persona1" y "persona2" son instancias de la clase "Persona". Cada instancia tiene sus propias propiedades "nombre" y "edad", pero 
+comparten la misma estructura y comportamiento definidos por la clase "Persona".Son usadas para crear objetos a partir de una clase, 
+cada objeto creado a partir de una clase es una instancia de esa clase.
+
+Get - Set: Getters y Setters son métodos especiales en una clase que se utilizan para acceder y modificar las propiedades de un objeto.
+Los getters se utilizan para obtener el valor de una propiedad, mientras que los setters se utilizan para establecer el valor de una propiedad. 
+Los getters y setters permiten controlar el acceso a las propiedades de un objeto y realizar validaciones o transformaciones antes de obtener o 
+establecer un valor.
+Ejemplo de Getters y Setters en javascript:
+
+class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    get nombre() {
+        return this.nombre;
+    }
+
+    set nombre(nuevoNombre) {
+        this.nombre = nuevoNombre;
+    }
+
+    get edad() {
+        return this.edad;
+    }
+
+    set edad(nuevaEdad) {
+        if (nuevaEdad >= 0) {
+            this.edad = nuevaEdad;
+        }
+    }
+}
+En este ejemplo, hemos definido una clase "Persona" con propiedades "nombre" y "edad". Hemos creado getters y setters para ambas propiedades. 
+El getter "nombre" devuelve el valor de la propiedad "nombre", mientras que 
+el setter "nombre" establece un nuevo valor para la propiedad "nombre". 
+El getter "edad" devuelve el valor de la propiedad "edad", mientras que el setter "edad" establece un nuevo valor para la propiedad "edad" solo si
+la nueva edad es mayor o igual a 0.
+
+Que es Static: En programación orientada a objetos, "static" se refiere a miembros de una clase que pertenecen a la clase en sí misma, 
+en lugar de a las instancias de la clase. Los miembros estáticos pueden ser variables o métodos, y se acceden directamente a través de la clase, 
+sin necesidad de crear una instancia de la clase. Los miembros estáticos son útiles para almacenar información o realizar operaciones que no dependen 
+de los datos específicos de una instancia, sino que son compartidos por todas las instancias de la clase.
+
+Ejemplo de miembros estáticos en javascript:
+
+class Contador {
+    static cuenta = 0;
+}
+En este ejemplo, hemos definido una clase "Contador" con un miembro estático llamado "cuenta". Este miembro es compartido por todas las instancias 
+de la clase "Contador", lo que significa que si modificamos el valor de "cuenta" a través de una instancia, el cambio se reflejará en todas las demás 
+instancias de la clase.
+
+Herencia: La herencia es un concepto fundamental en la programación orientada a objetos que permite crear una nueva clase a partir de una clase existente. 
+La nueva clase, llamada clase hija o subclase, hereda las propiedades y métodos de la clase existente, llamada clase padre o superclase. 
+La herencia permite reutilizar código y crear jerarquías de clases, lo que facilita la organización y el mantenimiento del código.
+
+Ejemplo de herencia en javascript:
+
+class Animal {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+}
+
+class Perro extends Animal {
+    constructor(nombre, raza) {
+        super(nombre);
+        this.raza = raza;
+    }
+}
+En este ejemplo, hemos definido una clase "Animal" con una propiedad "nombre". Luego, hemos creado una clase "Perro" que extiende la clase "Animal". 
+La clase "Perro" hereda la propiedad "nombre" de la clase "Animal" y agrega una nueva propiedad "raza". 
+El constructor de la clase "Perro" utiliza la función "super()" para llamar al constructor de la clase "Animal" y pasar el valor de "nombre". 
+De esta manera, la clase "Perro" puede acceder a las propiedades y métodos de la clase "Animal", además de tener sus propias propiedades y métodos 
+específicos.
+
+Que es el Asincronismo: El asincronismo es un concepto en programación que se refiere a la capacidad de ejecutar tareas de manera no bloqueante, 
+lo que permite que el programa continúe ejecutándose mientras se espera la finalización de una tarea. En un entorno asincrónico, 
+las tareas pueden iniciarse y luego continuar con otras operaciones sin tener que esperar a que la tarea anterior se complete. Esto es especialmente 
+útil en situaciones donde se realizan operaciones de entrada/salida, como solicitudes de red o acceso a bases de datos, ya que estas operaciones pueden 
+llevar tiempo y bloquear el programa si se ejecutan de manera síncrona.
+
+Ejemplo de asincronismo en javascript:
+
+function tareaAsincrona() {
+    return new Promise((resolve, reject) => {}) // Creamos una nueva promesa que representa una tarea asincrónica
+}
+
+Que es una promesa: Una promesa es un objeto en JavaScript que representa la eventual finalización (o falla) de una operación asincrónica y su valor 
+resultante. Las promesas permiten manejar operaciones asincrónicas de manera más legible y estructurada, evitando el uso excesivo de callbacks. Una 
+promesa puede estar en uno de tres estados: pendiente (pending), cumplida (fulfilled) o rechazada (rejected). Las promesas se pueden encadenar 
+utilizando los métodos .then() para manejar el resultado exitoso y .catch() para manejar errores.
+
+Que es Asyn-Away: Async-Away es una función en JavaScript que se utiliza para manejar operaciones asincrónicas de manera más sencilla y legible. La 
+función async se utiliza para declarar una función asincrónica, lo que permite el uso de la palabra clave await dentro de esa función. La palabra 
+clave await se utiliza para esperar a que una promesa se resuelva antes de continuar con la ejecución del código. Esto hace que el código asincrónico 
+sea más fácil de leer y escribir, ya que se asemeja a un código síncrono tradicional.
+
+Que es una excepción: Una excepción es un evento que ocurre durante la ejecución de un programa que interrumpe el flujo normal de las instrucciones. 
+Las excepciones pueden ser causadas por errores en el código, como intentar acceder a una propiedad de un objeto que no existe, o por situaciones 
+impredecibles, como la falta de conexión a una base de datos. Cuando ocurre una excepción, el programa puede manejarla utilizando bloques 
+try-catch-finally para capturar y manejar el error de manera adecuada.
+Ejemplo de manejo de excepciones en javascript:
+
+try {
+    // Código que puede generar una excepción
+} catch (error) {
+    // Código para manejar la excepción
+} finally {
+    // Código que se ejecuta siempre, independientemente de si se lanzó una excepción o no
+}   
+
+try-catch-finally es una estructura de control en JavaScript que se utiliza para manejar excepciones. 
+
+El bloque try contiene el código que puede generar una excepción. Si se produce una excepción dentro del bloque try, la ejecución se 
+detiene y se transfiere al bloque catch. 
+
+El bloque catch recibe un parámetro que representa la excepción que se ha lanzado, y dentro de este bloque se puede escribir código para manejar la 
+excepción de manera adecuada.
+
+El bloque finally es opcional y se ejecuta siempre, independientemente de si se lanzó una excepción o no. Este bloque se utiliza para realizar 
+tareas de limpieza o liberar recursos, asegurando que ciertas acciones se realicen incluso si ocurre una excepción.  
+

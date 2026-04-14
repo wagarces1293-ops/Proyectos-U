@@ -1,0 +1,1 @@
+Es diferente al map del array, se distingue por su "M" mayuscula.

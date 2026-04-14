@@ -1,0 +1,1 @@
+Cada elemento sigue al anterior.

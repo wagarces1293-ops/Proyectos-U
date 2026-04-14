@@ -1,0 +1,6 @@
+1. Hacer sistema reserva de hotel → (aplicar filter - map - reduce) que contenga un menu.
+2. Cajero automatico- (Retiro, Consignacion, Consuta de saldo, Transferencia)
+3. Carrito de compra.
+4. Digiturno.
+5. Venta.
+6. Venta de voletas para entrar al estadio.  
